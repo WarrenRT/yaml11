@@ -1,0 +1,19 @@
+version: "3"
+
+
+services:
+
+  server:
+
+    build: ./server
+
+    ports: 
+
+      - "50:50"
+
+  client:
+    build: ./client
+    ports:
+    - "3000:3000"
+    depends_on:
+      - server
